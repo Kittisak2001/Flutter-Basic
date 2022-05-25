@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'FoodMenu.dart';
+import 'MoneyBox.dart';
 
 void main() {
   var app = MyApp();
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: "My App",
       home: MyHomePage(),
-      theme: ThemeData(primarySwatch: Colors.pink),
+      theme: ThemeData(primarySwatch: Colors.purple),
     );
   }
 }
@@ -25,33 +26,32 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  List<FoodMenu> menu = [
-    FoodMenu("กุ้งเผา", "500", "assets/images/pic1.jpg"),
-    FoodMenu("กะเพราหมู", "80", "assets/images/pic2.jpg"),
-    FoodMenu("ส้มตำ", "60", "assets/images/pic3.jpg"),
-    FoodMenu("ผัดไทย", "40", "assets/images/pic4.jpg"),
-  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Selection Menu ${menu.length}"),
+          title: Text(
+            "บัญชีของฉัน",
+            style: TextStyle(
+              fontSize: 25,
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
         ),
-        body: ListView.builder(
-            itemCount: menu.length,
-            itemBuilder: (BuildContext context, int index) {
-              FoodMenu food = menu[index];
-              return ListTile(
-                leading: Image.asset(food.img),
-                title: Text(
-                  food.name,
-                  style: TextStyle(fontSize: 30),
-                ),
-                subtitle: Text(" ราคา ${food.price}"),
-                onTap: (){
-                  print("คุณเลือกเมนูอาหารที่มีชื่อว่า : ${food.name}");
-                },
-              );
-            }));
+        body: Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Column(
+            children: [
+              MoneyBox("ยอดคงเหลือ", 15000.75, Colors.blue, 150),
+              SizedBox(height: 5,),
+              MoneyBox("รายรับ", 45000.75, Colors.green, 100),
+              SizedBox(height: 5,),
+              MoneyBox("รายจ่าย", 30000.75, Colors.red, 100),
+              SizedBox(height: 5,),
+              MoneyBox("ยอดค้างชำระ", 5000.75, Colors.orange, 100),
+            ],
+          ),
+        ));
   }
 }
