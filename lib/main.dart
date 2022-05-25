@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'FoodMenu.dart';
 
 void main() {
   var app = MyApp();
@@ -24,36 +25,33 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int number = 0;
-
+  List<FoodMenu> menu = [
+    FoodMenu("กุ้งเผา", "500", "assets/images/pic1.jpg"),
+    FoodMenu("กะเพราหมู", "80", "assets/images/pic2.jpg"),
+    FoodMenu("ส้มตำ", "60", "assets/images/pic3.jpg"),
+    FoodMenu("ผัดไทย", "40", "assets/images/pic4.jpg"),
+  ];
   @override
   Widget build(BuildContext context) {
-    List<Widget> data = [];
-    data.add(Text("กดปุ่มเพิ่มจำนวนตัวเลข"));
-    data.add(Text(
-      "$number",
-      style: TextStyle(fontSize: 60),
-    ));
     return Scaffold(
-      appBar: AppBar(
-        title: Text("โปรแกรมนับเลข"),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: data,
+        appBar: AppBar(
+          title: Text("Selection Menu ${menu.length}"),
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: addNumber,
-        child: Icon(Icons.add),
-      ),
-    );
-  }
-
-  void addNumber() {
-    setState(() {
-      number++;
-    });
+        body: ListView.builder(
+            itemCount: menu.length,
+            itemBuilder: (BuildContext context, int index) {
+              FoodMenu food = menu[index];
+              return ListTile(
+                leading: Image.asset(food.img),
+                title: Text(
+                  food.name,
+                  style: TextStyle(fontSize: 30),
+                ),
+                subtitle: Text(" ราคา ${food.price}"),
+                onTap: (){
+                  print("คุณเลือกเมนูอาหารที่มีชื่อว่า : ${food.name}");
+                },
+              );
+            }));
   }
 }
