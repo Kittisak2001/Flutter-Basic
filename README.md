@@ -1,20 +1,11 @@
 # flutter_application_
 
-A new Flutter project.
+Number Counting Program App (3.10.44)
 
-## Getting Started
+Food Menu Selection App (3.57.40) 
 
-This project is a starting point for a Flutter application.
+Accounting Program App (5.06.39)
 
-A few resources to get you started if this is your first Flutter project:
+Exchabge Rate App (7.22.07)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-
-
-
-Credit : https://www.youtube.com/watch?v=3jGj-1-m_zA&t=21894s&ab_channel=KongRuksiamOfficial
+Credit Kongruksiam : https://www.youtube.com/watch?v=3jGj-1-m_zA&t=21894s&ab_channel=KongRuksiamOfficial
