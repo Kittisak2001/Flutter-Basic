@@ -1,6 +1,6 @@
 # Flutter-Basic Applications
 
--Number Counting Program App 
+-Number Counting App 
 
 ![Counting App](https://user-images.githubusercontent.com/100192085/170450659-0e86e7cc-de3d-48b6-8787-5134cff8a047.jpg)
 
